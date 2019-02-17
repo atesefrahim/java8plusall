@@ -38,5 +38,6 @@ public class LambdaUse {
 
         System.out.println("count of given string :"+count.compute("ates"));
 
+
     }
 }

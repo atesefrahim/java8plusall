@@ -7,4 +7,5 @@ public interface LambdaInterface {
     //boolean computeTest(int x);
 
     String myStringFunc(String str);
+
 }
