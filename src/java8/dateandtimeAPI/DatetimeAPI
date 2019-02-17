@@ -1,0 +1,15 @@
+ Java8 Date and Time
+
+  1- Immutability: ex date class is mutable and this is one of biggest problem with date and calendar class. But with java8 is immutable is good for multithread envs.
+  2- Separation of Concerns: The new API separates clearly between human readable date time and machine time(unix timestamp)
+  3- Clarity
+  4- Utility Ops
+  5- Extendable
+
+
+ // java8 date time consists of following packages;
+ // java.time package: base package of new date time API. LocalDate, LocalTime, LocalDateTime, Instant, Period and Duration. All of these are immutable
+ // java.time.chrono package: This package defines generic APIs for non ISO calendar systems.
+ // java.time.format
+ // java.time.temporal
+ // java.time.zone
