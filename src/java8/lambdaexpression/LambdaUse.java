@@ -1,6 +1,12 @@
 package java8.lambdaexpression;
 
 
+import java8.functional.Person;
+
+import java.util.stream.Stream;
+
+import static java.util.Arrays.asList;
+
 public class LambdaUse {
 
     public static void main(String[] args) {
@@ -37,6 +43,14 @@ public class LambdaUse {
         };
 
         System.out.println("count of given string :"+count.compute("ates"));
+
+
+        Stream<LambdaPerson> persons = asList(new LambdaPerson("ibrahim", 30, ""), new LambdaPerson("ates", 29, "")).stream();
+
+        Stream<LambdaPerson> personStream = persons
+                .filter(p -> p.getAge() > 29);
+
+        personStream.forEach(kr-> System.out.println(kr));
 
 
     }
