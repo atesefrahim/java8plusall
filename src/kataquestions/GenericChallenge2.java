@@ -1,4 +1,4 @@
-package questions;
+package kataquestions;
 
 //Following quiz is given by Oracle
 public class GenericChallenge2 {

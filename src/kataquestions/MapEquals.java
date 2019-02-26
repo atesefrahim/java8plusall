@@ -1,4 +1,4 @@
-package questions;
+package kataquestions;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
