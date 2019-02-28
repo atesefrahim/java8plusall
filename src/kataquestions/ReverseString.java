@@ -1,41 +1,24 @@
-package kataquestions;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
+package soquestions;
 
 public class ReverseString {
     public static void main(String[] args) {
 
-        System.out.println(reverseWordsMethod2("ehT kciuq nworb xof spmuj revo eht yzal .god"));
+        System.out.println(spinWords("This is java codding practice"));
     }
-    public static String reverseWords(final String original)
-    {
-        // Have at it
 
-        if(original.length()>0&&original.isBlank()) return original;
-
-        StringBuilder stringBuilder = new StringBuilder();
-
-        StringBuilder reverseItem = new StringBuilder();
-        String[] array = original.split(" ");
-        int count=0;
-        for(String item:array)
+    public static String spinWords(String sentence) {
+        String[] wordList = sentence.split(" ");
+        String newSentence="";
+        for(String wrd:wordList)
         {
-            count++;
-            if(count>1&&count<array.length+1) stringBuilder.append(" ");
-            reverseItem.append(item);
-            stringBuilder.append(reverseItem.reverse().toString());
-            reverseItem.delete(0,item.length());
+            if(wrd.length()>4){
+                if(newSentence.length()>0) newSentence=newSentence+" " +new StringBuilder(wrd).reverse().toString();
+                else newSentence=new StringBuilder(wrd).reverse().toString();
+            }
+            else
+            if(newSentence.length()>0) newSentence=newSentence+" "+wrd;
+            else newSentence=wrd;
         }
-
-        return stringBuilder.toString();
+        return newSentence;
     }
-
-    public static String reverseWordsMethod2(final String original)
-    {
-        return Arrays.stream(original.split("(?<=\\s)|(?=\\s+)"))
-                .map(str -> new StringBuilder(str).reverse().toString())
-                .collect(Collectors.joining());
-    }
-
 }
