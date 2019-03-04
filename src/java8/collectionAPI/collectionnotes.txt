@@ -1,0 +1,14 @@
+int to Integer;
+
+int[] data = {1,2,3,4,5,6};
+
+// To boxed array
+Integer[] toInteger = Arrays.stream( data ).boxed().toArray( Integer[]::new );
+or
+Integer[] toInteger = IntStream.of( data ).boxed().toArray( Integer[]::new );
+
+// To boxed list
+List<Integer> toListInteger  = Arrays.stream( data ).boxed().collect( Collectors.toList() );
+List<Integer> toListInteger = IntStream.of( data ).boxed().collect( Collectors.toList() );
+
+********************************************************************************************
