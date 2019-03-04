@@ -15,3 +15,9 @@ or using InStream of;
 List<Integer> toListInteger = IntStream.of( data ).boxed().collect( Collectors.toList() );
 
 ********************************************************************************************
+
+List<Integer> ranks=new ArrayList<>(Arrays.asList(-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8));
+int value = ranks.stream()                       
+.filter(x -> inputRank==(x.intValue()))        
+.findAny()                                      
+.orElse(0);
