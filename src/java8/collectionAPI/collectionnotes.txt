@@ -17,7 +17,16 @@ List<Integer> toListInteger = IntStream.of( data ).boxed().collect( Collectors.t
 ********************************************************************************************
 
 List<Integer> ranks=new ArrayList<>(Arrays.asList(-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8));
+
+find value of list;
+
 int value = ranks.stream()                       
 .filter(x -> inputRank==(x.intValue()))        
 .findAny()                                      
 .orElse(0);
+
+find index given by value;
+IntStream.range(0, ranks.size())
+                .filter(x -> inputRank==ranks.get(x))        
+                .findFirst()                                     
+                .orElse(0);
