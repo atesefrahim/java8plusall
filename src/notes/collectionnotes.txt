@@ -1,4 +1,4 @@
-int to Integer;
+int to Integer / primitive to wrapper;
 
 int[] data = {1,2,3,4,5,6};
 
@@ -25,8 +25,21 @@ int value = ranks.stream()
 .findAny()                                      
 .orElse(0);
 
+
+
 find index given by value;
+
 IntStream.range(0, ranks.size())
                 .filter(x -> inputRank==ranks.get(x))        
                 .findFirst()                                     
                 .orElse(0);
+
+********************************************************************************************
+
+Sort two dimensional array using Arrays.sort and comparator
+
+java.util.Arrays.sort(intervals, new java.util.Comparator<int[]>() {
+            public int compare(int[] a, int[] b) {
+                return Integer.compare(a[0], b[0]);
+            }
+        });
