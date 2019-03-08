@@ -43,3 +43,11 @@ java.util.Arrays.sort(intervals, new java.util.Comparator<int[]>() {
                 return Integer.compare(a[0], b[0]);
             }
         });
+
+********************************************************************************************
+find intervals;
+
+intervals == null ? 0 : (int) Arrays.stream(intervals)
+                .flatMapToInt(interval -> IntStream.range(interval[0], interval[1]))
+                .distinct()
+                .count();
