@@ -43,4 +43,8 @@ public class LambdaPerson {
                 ", age=" + age +
                 '}';
     }
+
+    public void printPerson(){
+        System.out.println("name : "+name+ " age : "+age);
+    }
 }

@@ -3,6 +3,8 @@ package java8.lambdaexpression;
 
 import java8.functional.Person;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
@@ -53,5 +55,37 @@ public class LambdaUse {
         personStream.forEach(kr-> System.out.println(kr));
 
 
+        List<LambdaPerson> lambdaPeople = new ArrayList<>();
+        lambdaPeople.add(new LambdaPerson("ibrahim", 30, ""));
+        lambdaPeople.add(new LambdaPerson("ates", 25, ""));
+
+
+        printPersonsOlderThan(lambdaPeople, 26);
+        printPersons(lambdaPeople, 30);
+
+
     }
+
+    // without lambda
+    public static void printPersonsOlderThan(List<LambdaPerson> roster, int age) {
+        for (LambdaPerson p : roster) {
+            if (p.getAge() >= age) {
+                p.printPerson();
+            }
+        }
+    }
+
+    // using lambda
+    public static void printPersons(List<LambdaPerson> roster, int age) {
+
+
+
+        roster
+                .stream()
+                .filter( p -> p.getAge() >= age
+                              && p.getAge() <= age)
+                .map(p -> p.getName())
+                .forEach(name -> System.out.println(name));
+   }
+
 }
