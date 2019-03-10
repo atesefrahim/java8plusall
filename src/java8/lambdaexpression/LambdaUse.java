@@ -61,7 +61,6 @@ public class LambdaUse {
 
 
         printPersonsOlderThan(lambdaPeople, 26);
-        printPersons(lambdaPeople, 30);
 
 
     }
@@ -75,17 +74,6 @@ public class LambdaUse {
         }
     }
 
-    // using lambda
-    public static void printPersons(List<LambdaPerson> roster, int age) {
 
-
-
-        roster
-                .stream()
-                .filter( p -> p.getAge() >= age
-                              && p.getAge() <= age)
-                .map(p -> p.getName())
-                .forEach(name -> System.out.println(name));
-   }
 
 }
