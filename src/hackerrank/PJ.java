@@ -42,13 +42,9 @@ class Result3 {
 
         while(i<cell.size()-3)
         {
-            if(cell.get(i+1)>0)
+            if(cell.get(i+1)>0  || cell.get(i+1)>cell.get(i+3))
             {
                 score1=score1 + cell.get(i+1);
-                i++;
-            }
-            else if(cell.get(i+1)>cell.get(i+3)){
-                score1 = score1 + cell.get(i+1);
                 i++;
             }
             else {
