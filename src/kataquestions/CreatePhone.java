@@ -8,12 +8,11 @@ public class CreatePhone {
     public static String createPhoneNumber(int[] numbers) {
         // Your code here!
 
-        String phoneFormat="(";
-        for(int indis :numbers)
-        {
-            phoneFormat=phoneFormat+indis;
-            if(phoneFormat.length()==4) phoneFormat=phoneFormat+") ";
-            else if(phoneFormat.length()==9) phoneFormat=phoneFormat+"-";
+        String phoneFormat = "(";
+        for (int indis : numbers) {
+            phoneFormat = phoneFormat + indis;
+            if (phoneFormat.length() == 4) phoneFormat = phoneFormat + ") ";
+            else if (phoneFormat.length() == 9) phoneFormat = phoneFormat + "-";
 
         }
         return phoneFormat;

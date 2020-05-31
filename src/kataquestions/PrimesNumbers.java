@@ -13,7 +13,7 @@ public class PrimesNumbers {
 
     public static String factors(int n) {
         // your code
-        for(int i=2;i<=n/2;i++){
+        for (int i = 2; i <= n / 2; i++) {
             getPrimes(n, i);
         }
 
@@ -23,47 +23,41 @@ public class PrimesNumbers {
                 .sorted(Map.Entry.comparingByKey())
                 .forEachOrdered(x -> result2.put(x.getKey(), x.getValue()));
 
-        String result="";
+        String result = "";
 
         for (Map.Entry<Integer, Integer> entry : result2.entrySet()) {
 
-            if(entry.getValue()>1)
-            {
-                result = result+"("+entry.getKey()+"**"+entry.getValue()+")";
-            }
-            else result=result+ "("+entry.getKey()+")";
+            if (entry.getValue() > 1) {
+                result = result + "(" + entry.getKey() + "**" + entry.getValue() + ")";
+            } else result = result + "(" + entry.getKey() + ")";
         }
-        if (result.isEmpty()) result="("+n+")";
+        if (result.isEmpty()) result = "(" + n + ")";
 
         allList.clear();
         return result;
     }
 
-    public static Map<Integer,Integer> getPrimes(int n, int divide)
-    {
-        int count=0;
-        while(n%divide==0)
-        {
-            if(isPrime(divide)) {
+    public static Map<Integer, Integer> getPrimes(int n, int divide) {
+        int count = 0;
+        while (n % divide == 0) {
+            if (isPrime(divide)) {
                 count = allList.containsKey(divide) ? allList.get(divide) : 0;
 
                 allList.put(divide, count + 1);
             }
-            n=n/divide;
+            n = n / divide;
         }
 
         return allList;
 
     }
 
-    public static boolean isPrime(int num)
-    {
+    public static boolean isPrime(int num) {
 
-        if (num==2) return true;
-        int i=2;
-        while(i<num)
-        {
-            if(num%i==0 && i!=num) return false;
+        if (num == 2) return true;
+        int i = 2;
+        while (i < num) {
+            if (num % i == 0 && i != num) return false;
             i++;
         }
         return true;
