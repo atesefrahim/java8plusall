@@ -1,6 +1,8 @@
 package java8.regex;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,8 +44,14 @@ public class RegularExpression {
 
         Matcher m = p.matcher(s);
 
+        s.matches(regex);
+
+        String[] arrayStr = s.split(regex);
+
+        List<String> ast = new ArrayList<>();
         // Check for subsequences of input that match the compiled pattern
         while (m.find()) {
+            ast.add(m.group());
             System.out.println(m.group());
         }
 
