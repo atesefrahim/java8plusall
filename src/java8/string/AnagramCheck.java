@@ -1,6 +1,6 @@
 package java8.string;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class AnagramCheck {
 
@@ -21,12 +21,17 @@ public class AnagramCheck {
 
         char[] listB = b.toUpperCase().toCharArray();
 
+        SortedSet<Character> sortedListA = new TreeSet<>();
+        SortedSet<Character> sortedListB = new TreeSet<>();
+
         for(int x = 0; x<a.length(); x++){
-            if(listA[x]!=listB[a.length()-x-1])
-                return false;
+            sortedListA.add(listA[x]);
+            sortedListB.add(listB[x]);
         }
 
-        return true;
+        if(sortedListA.equals(sortedListB)) return  true;
+
+        return false;
     }
 
 }
