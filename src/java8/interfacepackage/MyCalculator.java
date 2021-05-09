@@ -2,6 +2,10 @@ package java8.interfacepackage;
 
 public class MyCalculator implements AdvancedArithmetic {
 
+    public MyCalculator(int sum) {
+        this.sum = sum;
+    }
+
     int sum=0;
     @Override
     public int divisor_sum(int n) {

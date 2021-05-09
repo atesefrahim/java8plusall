@@ -41,12 +41,5 @@ public class LocalDateExample {
 
         //Compare two LocalDate for before and after
         System.out.println("Today is before 01/01/2019? "+today.isBefore(LocalDate.of(2019,1,1)));
-
-
-
-
     }
-
-
-
 }

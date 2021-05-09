@@ -9,7 +9,6 @@ public class Palindrome {
         Scanner sc = new Scanner(System.in);
         String A = sc.next();
         boolean pl = false;
-        /* Enter your code here. Print output to STDOUT. */
         for (int i = 0; i < A.length() / 2; i++) {
             if (A.charAt(i) == A.charAt(A.length()-1 - i)) pl = true;
             else {
