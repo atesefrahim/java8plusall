@@ -14,14 +14,15 @@ public class NearestDelivery {
         list.add(Arrays.asList(1, -1));
 
 
-        System.out.println(closestXDestinations(3, list, 1));
+        System.out.println(closestXDestinations(3, list, 2));
 
     }
 
     public static List<List<Integer>> closestXDestinations(int numDestinations,
                                                            List<List<Integer>> allLocations, int numDeliveries) {
         TreeMap<Double, List<Integer>> sortedMap = new TreeMap<>();
-        for (int i = 0; i < allLocations.size(); i++) {
+        int minVal = 0;
+        for (int i = 0; i < allLocations.size()-1; i++) {
             List<Integer> list = allLocations.get(i);
             if (!list.isEmpty()) {
                 if (list.size() == 1) {
